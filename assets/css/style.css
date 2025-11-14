@@ -13,13 +13,25 @@ a {
 html, body {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
 .hero-section {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #051a39;
+    background: url(../images/bg2.jpg) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .hero-img {
@@ -29,7 +41,7 @@ html, body {
     transform: translate(-50%, -50%);
     width: 70%;
     height: 50%;
-    background: url(../images/bg.jpg) 50% 50% no-repeat;
+    background: url(../images/bg1.jpg) 50% 50% no-repeat;
     background-size: cover;
 }
 
@@ -67,7 +79,7 @@ ion-icon {
     width: 50%;
     height: 100vh;
     right: -50%;
-    z-index: 2;
+    z-index: 10;
     background-color: rgba(59, 103, 144, 0.9);
 }
 
@@ -89,9 +101,9 @@ ion-icon {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background: #124471;
+    background: #124472;
     margin: 4px 0;
-    padding: 30px 0 16px 0; 
+    padding: 30px 0 16px 0;
 }
 
 .menu-links .link a {
@@ -111,15 +123,16 @@ ion-icon {
 }
 
 .social-media .link a {
-    margin: 10px; 
+    margin: 10px;
+    display: inline-block;
     color: #031f39;
     transition: all .5s ease-in-out;
 }
 
 .social-media .link a:hover {
     color: #fff;
+    transform: scale(1.1);
 }
-
 
 @media (max-width: 900px) {
     .menu-container {
@@ -145,7 +158,7 @@ ion-icon {
 }
 
 .menu-links .menu-link-1 {
-    position: relative;
+    position: relative;    
 }
 
 .menu-links .menu-link-1 a::after {
@@ -155,10 +168,11 @@ ion-icon {
     right: -20px;
     width: 70px;
     height: 70px;
-    background: url("../images/icon-1.png") 50% 50% no-repeat;
+    background: url(../images/icon-1.png) 50% 50% no-repeat;
     background-size: cover;
     z-index: 10;
 }
+
 .menu-links .menu-link-2 a::after {
     content: '';
     position: absolute;
@@ -166,10 +180,11 @@ ion-icon {
     left: -20px;
     width: 70px;
     height: 70px;
-    background: url("../images/icon-2.png") 50% 50% no-repeat;
+    background: url(../images/icon-2.png) 50% 50% no-repeat;
     background-size: cover;
     z-index: 10;
 }
+
 .menu-links .menu-link-3 a::after {
     content: '';
     position: absolute;
@@ -177,10 +192,11 @@ ion-icon {
     right: -20px;
     width: 70px;
     height: 70px;
-    background: url("../images/icon-3.png") 50% 50% no-repeat;
+    background: url(../images/icon-3.png) 50% 50% no-repeat;
     background-size: cover;
     z-index: 10;
 }
+
 .menu-links .menu-link-4 a::after {
     content: '';
     position: absolute;
@@ -188,20 +204,19 @@ ion-icon {
     left: -20px;
     width: 70px;
     height: 70px;
-    background: url("../images/icon-4.png") 50% 50% no-repeat;
+    background: url(../images/icon-4.png) 50% 50% no-repeat;
     background-size: cover;
     z-index: 10;
 }
 
 .menu-links .menu-link-1:hover a::after,
-.menu-links .menu-link-2:hover a::after, 
+.menu-links .menu-link-2:hover a::after,
 .menu-links .menu-link-3:hover a::after,
 .menu-links .menu-link-4:hover a::after {
     animation-name: todo;
-    animation-duration: 1s; 
+    animation-duration: 1s;
     animation-fill-mode: both;
 }
-
 
 @keyframes todo {
     0% {
@@ -226,6 +241,12 @@ ion-icon {
         transform: scale3d(1, 1, 1);
     }
 }
+
+
+
+
+
+
 
 
 
